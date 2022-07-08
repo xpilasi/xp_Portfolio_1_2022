@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block title %} {{title}}{% endblock %}
+
+{% block content %}
+
+
+    {% for blo in blog %}
+
+        <div class="cont_blog">
+            <div class="img_blog"><img src="../media/{{blo.2}}"></div>
+            <div class="int_blog">
+                <article class="article_title"><h2>{{blo.0}}</h2></article>
+                <article class="article_date"><h3>{{blo.3}}</h3></article>
+                <article class="article_desc">{{blo.1}}</article>
+            </div>
+        </div>
+        {% endfor %}
+
+{% endblock %}

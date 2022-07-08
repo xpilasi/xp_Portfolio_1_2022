@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {% block title %} {% endblock %} | Xpilasi Portfolio
+    </title>
+    
+    {# CSS #}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+    
+</head> 
+<body>
+    {# Inicio Menú web #}
+    <nav>
+        
+        <a href="{% url 'index'%}">
+            <img src="{% static 'img/logo-xpilasi.png' %}"/>
+        </a>
+        
+        <ul>
+            {% for page in pages %}
+                <li><a href="{% url page.1 %}">{{page.0}}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>      
+    {# Fin Menú web #}
+
+
+    <div class="title_page">
+        {{title_page}}
+    </div>
+
+    {# Contenido #}
+    <div id="content">
+
+        {% block content %}
+        {% endblock %}
+
+    </div>
+    {# Fin Contenido #}
+
+    <footer>
+        <a href="#"><img class="logos-menu" src="{% static 'img/git-icon.png' %}"/></a>
+        <a href="#"><img class="logos-menu" src="{% static 'img/linkedin-icon.png' %}"/></a>
+        <a href="mailto: pilasiha@gmail.com"><img class="logos-menu" src="{% static 'img/gmail-icon.png' %}"/></a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block title %} {{title}}{% endblock %}
+
+{% block content %}
+
+    
+        
+         {% for project in projects %}
+         <a href="#">
+            
+            <div class="cajaInt">
+                <div class="caja_movible">
+                    <div class="imagen_portfolio">
+                        {% if project.5 != 'null' %}
+                            <img src="../media/{{project.5}}"/>
+                                
+                        {% endif %}    
+                    </div> 
+                    <div class="proyectos">
+                        <article><h3><span class="proy_title">{{project.0}}</h3><span></article>
+                        <article><span class="proy_desc">{{project.4}}<span></article>
+                        <article><span class="proy_desc">{{project.2}} | {{project.3}}<span></article>
+                        <p>
+                        <article><span class="proy_desc_desc">{{project.1}}<span></article></p>
+                            
+                    </div>
+                </div>     
+            </div>
+        </a>
+         {% endfor %}
+        
+    
+
+
+{% endblock %}

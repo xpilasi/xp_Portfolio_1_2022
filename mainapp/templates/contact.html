@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block title %} {{title}}{% endblock %}
+
+{% block content %}
+
+<form action="" method = "POST" class="formulario_contacto">
+
+    {% csrf_token %}
+    <ul>
+        
+        <li class = "form_style">Name: <span class = "form_style_box">{{form.title}}</span></li>
+        <li class = "form_style">Phone: <span class = "form_style_box">{{form.phone}}</span></li>
+        <li class = "form_style">Email: <span class = "form_style_box"> {{form.email}}</span></li>
+        <li class = "form_style">Message: </li>
+    </ul>
+    <span class = "form_style">{{form.message}}</span>
+    <input type ="submit" class ="button" value="Submit">
+
+    
+
+</form>
+
+    
+    
+{% for message in messages %}
+<div class = "msje">
+    {{message}}
+</div>
+{% endfor %}
+
+
+
+{% endblock %}
